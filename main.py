@@ -15,15 +15,12 @@ class Question():
 
 
 
-
 def ask(q: Question):
     text.setText(q.question)
     answers[0].setText(q.right_answer)
     answers[1].setText(q.wrong1)
     answers[2].setText(q.wrong2)
     answers[3].setText(q.wrong3)
-
-
 
 
 
@@ -38,10 +35,6 @@ newgroup = QGroupBox('Результат теста')
 newgroup.hide()
 tekst = QLabel('прав ты или нет?')
 tkt = QLabel('ответ будет тут!')
-
-
-
-
 
 
 l1 = QVBoxLayout()
@@ -119,15 +112,6 @@ def check_answer():
         show_correct('Неправ')
 
 
-
-
-
-
-
-
-
-
-
 def next_question():
     main_win.chet = randint(0,len(question_list)-1)
     q = question_list[main_win.chet]
@@ -135,9 +119,7 @@ def next_question():
 
 
 
-
 next_question()
-
 
 def show_correct(res):
     tekst.setText(res)
@@ -149,14 +131,8 @@ group.setLayout(l2)
 newgroup.setLayout(l5)
 otv.clicked.connect(start_test)
 
-
-
-
 print('Правильные ответы:', main_win.score)
 print('Неправильные ответы', main_win.total)
-
-
-
 
 main_win.setLayout(l1)
 main_win.show()
